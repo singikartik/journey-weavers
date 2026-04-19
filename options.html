@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Journey Weavers — Design Options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<template id="__bundler_thumbnail">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" width="100%" height="100%">
+<rect width="400" height="280" fill="#2A1436"/>
+<circle cx="200" cy="110" r="38" fill="#E8A93B"/>
+<text x="200" y="200" text-anchor="middle" fill="#F6F1E7" font-family="Georgia, serif" font-size="26" font-style="italic">Journey Weavers</text>
+<text x="200" y="230" text-anchor="middle" fill="#E8A93B" font-family="Georgia, serif" font-size="12" letter-spacing="3">DESIGN OPTIONS</text>
+</svg>
+</template>
+<style>
+  :root{
+    --plum:#2A1436;--saffron:#E8A93B;--paper:#F6F1E7;--ink:#1A1418;--hair:rgba(26,20,24,.14);
+    --serif:"Cormorant Garamond",Georgia,serif;--sans:"Inter",system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;min-height:100vh}
+  .wrap{max-width:1280px;margin:0 auto;padding:56px 40px 80px}
+  header{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:56px;gap:30px;flex-wrap:wrap}
+  .brand{font-family:var(--serif);font-size:28px;font-weight:500;display:flex;align-items:center;gap:12px}
+  .brand img{width:44px;height:44px;object-fit:contain;display:block;mix-blend-mode:multiply}
+  .meta{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:rgba(26,20,24,.55)}
+  h1{font-family:var(--serif);font-size:clamp(44px,6vw,84px);line-height:1.02;letter-spacing:-0.02em;font-weight:400;max-width:900px;margin-bottom:20px}
+  h1 em{color:#C9871A;font-style:italic}
+  .lede{font-family:var(--serif);font-size:22px;line-height:1.45;max-width:720px;color:rgba(26,20,24,.72);margin-bottom:64px}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:36px}
+  .card{background:#fff;border:1px solid var(--hair);overflow:hidden;transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s;text-decoration:none;color:inherit;display:flex;flex-direction:column}
+  .card:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(42,20,54,.35)}
+  .card .preview{aspect-ratio:16/10;background:center/cover no-repeat;position:relative;overflow:hidden}
+  .card .preview::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(26,20,24,.55))}
+  .card .tag{position:absolute;top:20px;left:20px;background:rgba(246,241,231,.95);padding:8px 14px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;z-index:2}
+  .card .label{position:absolute;bottom:20px;left:20px;color:#fff;font-family:var(--serif);font-size:18px;font-style:italic;z-index:2}
+  .card .body{padding:32px 32px 36px}
+  .card h2{font-family:var(--serif);font-size:32px;line-height:1.1;letter-spacing:-0.01em;margin-bottom:14px}
+  .card p{font-size:15px;line-height:1.6;color:rgba(26,20,24,.7);margin-bottom:24px}
+  .card .bullets{list-style:none;font-size:14px;line-height:1.7;color:rgba(26,20,24,.85);margin-bottom:28px}
+  .card .bullets li{padding-left:18px;position:relative}
+  .card .bullets li::before{content:"◆";position:absolute;left:0;color:var(--saffron);font-size:9px;top:5px}
+  .card .go{display:inline-flex;align-items:center;gap:10px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;padding-bottom:4px;border-bottom:1px solid currentColor;width:fit-content}
+  .note{margin-top:72px;padding:36px 40px;background:var(--plum);color:var(--paper);display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap}
+  .note h3{font-family:var(--serif);font-size:26px;font-weight:500}
+  .note p{font-size:14px;opacity:.8;max-width:520px;margin-top:6px}
+  @media (max-width:860px){.grid{grid-template-columns:1fr}.wrap{padding:32px 20px 60px}}
+
+  /* preview bg images use CSS for offline reliability */
+  .p-v1{background-image:url('assets/stock/rajasthan1.jpg')}
+  .p-v2{background-image:url('assets/stock/hero3.jpg')}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><img src="assets/logo-mark.jpg" alt="Journey Weavers"/>Journey Weavers</div>
+    <div class="meta">Design Options · Round 1</div>
+  </header>
+
+  <h1>Two <em>directions</em>. Same soul.</h1>
+  <p class="lede">Both options use the Journey Weavers DNA — plum, saffron, the footprint mark, and the same considered voice. Where they differ is in rhythm, density, and emotional register. Click either to explore.</p>
+
+  <div class="grid">
+    <a class="card" href="journey-weavers.html">
+      <div class="preview p-v1">
+        <span class="tag">Option 01</span>
+        <span class="label">"The Editorial"</span>
+      </div>
+      <div class="body">
+        <h2>Quietly confident. Warm & editorial.</h2>
+        <p>Our current direction. A boutique-magazine feel — strong grid, calm typography, imagery used as generous pause points.</p>
+        <ul class="bullets">
+          <li>Curated, considered tone</li>
+          <li>Structured vertical layout</li>
+          <li>Emphasis on clarity and trust</li>
+          <li>Feels: Condé Nast Traveller, &Beyond</li>
+        </ul>
+        <span class="go">Explore Option 01 →</span>
+        <a href="journey-weavers-mobile.html" style="display:block;margin-top:14px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--saffron);font-weight:500" onclick="event.stopPropagation()">See mobile sample →</a>
+      </div>
+    </a>
+
+    <a class="card" href="Journey Weavers — Option 02 Cinematic.html">
+      <div class="preview p-v2">
+        <span class="tag">Option 02</span>
+        <span class="label">"The Cinematic"</span>
+      </div>
+      <div class="body">
+        <h2>Slow, sensory, cinematic.</h2>
+        <p>Inspired by Made for Spain & Portugal. Large serif display, numbered editorial moments, scroll-driven image reveals, a deeper emotional pull.</p>
+        <ul class="bullets">
+          <li>Oversized display type with italic accents</li>
+          <li>"Inspiration No. 01–12" filterable grid</li>
+          <li>Soft scroll reveals, parallax, marquee trust bar</li>
+          <li>Feels: Aman, Belmond, a travel journal</li>
+        </ul>
+        <span class="go">Explore Option 02 →</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="note">
+    <div>
+      <h3>Shortlist your favourite — or mix & match.</h3>
+      <p>Once you've lived with both, tell us which sections resonate. We can pull the cinematic hero onto the editorial layout, or swap the testimonial treatments — the best site is often a composite.</p>
+    </div>
+    <a href="mailto:hello@journeyweavers.in" style="color:var(--saffron);font-size:11px;letter-spacing:.24em;text-transform:uppercase;font-weight:500;white-space:nowrap;border-bottom:1px solid currentColor;padding-bottom:4px">Share feedback →</a>
+  </div>
+</div>
+</body>
+</html>

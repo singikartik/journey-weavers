@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Journey Weavers — Mobile (Option 01)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<template id="__bundler_thumbnail">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280" width="100%" height="100%">
+<rect width="400" height="280" fill="#FBF7F1"/>
+<rect x="165" y="50" width="70" height="150" rx="14" fill="#F4A836"/>
+<text x="200" y="232" text-anchor="middle" fill="#3E1E4E" font-family="Georgia, serif" font-size="22" font-style="italic">Mobile — Opt. 01</text>
+</svg>
+</template>
+<style>
+:root{
+  --plum:#3E1E4E;--plum-deep:#2A1436;--saffron:#E8A93B;--saffron-deep:#C9871A;
+  --paper:#FBF7F1;--paper-warm:#F3ECDD;--ink:#1A1418;--ink-60:rgba(26,20,24,.6);--ink-70:rgba(26,20,24,.72);
+  --serif:"Cormorant Garamond",Georgia,serif;--sans:"Inter",system-ui,sans-serif;
+  --hair:rgba(26,20,24,.12);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#2a2028;min-height:100vh;font-family:var(--sans);-webkit-font-smoothing:antialiased;color:var(--ink);padding:40px 20px 80px}
+
+/* ===== Page chrome (context above the frame) ===== */
+.page-head{max-width:1240px;margin:0 auto 40px;color:#F6F1E7;display:flex;justify-content:space-between;align-items:baseline;gap:24px;flex-wrap:wrap}
+.page-head .brand{font-family:var(--serif);font-size:22px;font-weight:500;display:flex;align-items:center;gap:10px}
+.page-head .brand::before{content:"";width:22px;height:22px;background:var(--saffron);border-radius:999px 999px 999px 2px;transform:rotate(-12deg)}
+.page-head h1{font-family:var(--serif);font-size:34px;font-weight:500;letter-spacing:-.01em}
+.page-head h1 em{color:var(--saffron);font-style:italic}
+.page-head .meta{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(246,241,231,.55)}
+
+.stage{max-width:1240px;margin:0 auto;display:grid;grid-template-columns:auto 1fr;gap:56px;align-items:start}
+@media(max-width:900px){.stage{grid-template-columns:1fr}}
+
+/* ===== iPhone frame ===== */
+.phone{
+  width:402px;height:874px;border-radius:52px;overflow:hidden;position:relative;
+  background:#000;
+  box-shadow:0 0 0 10px #1a1a1a, 0 0 0 12px #2a2a2a, 0 60px 120px -20px rgba(0,0,0,.6), 0 0 0 13px rgba(255,255,255,.04);
+  margin:0 auto;
+}
+.phone .island{position:absolute;top:12px;left:50%;transform:translateX(-50%);width:120px;height:34px;border-radius:22px;background:#000;z-index:50}
+.phone .statusbar{position:absolute;top:0;left:0;right:0;height:54px;display:flex;justify-content:space-between;align-items:center;padding:18px 30px 0;z-index:40;font-size:15px;font-weight:600;color:#1a1418;font-family:-apple-system,system-ui,sans-serif}
+.phone .statusbar .right{display:flex;gap:6px;align-items:center}
+.phone .statusbar svg{display:block}
+.phone .screen{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;background:var(--paper);scrollbar-width:none}
+.phone .screen::-webkit-scrollbar{display:none}
+.phone .home-indicator{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:rgba(0,0,0,.3);z-index:60;pointer-events:none}
+
+/* ===== Mobile page content ===== */
+.m{font-family:var(--sans);color:var(--ink);font-size:15px;line-height:1.5}
+
+/* Nav */
+.m-nav{position:sticky;top:0;z-index:30;background:rgba(251,247,241,.92);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);padding:54px 20px 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--hair)}
+.m-nav .brand{font-family:var(--serif);font-size:19px;font-weight:500;display:flex;align-items:center;gap:8px}
+.m-nav .brand::before{content:"";width:18px;height:18px;background:var(--saffron);border-radius:999px 999px 999px 2px;transform:rotate(-12deg)}
+.m-nav .burger{display:flex;flex-direction:column;gap:4px;cursor:pointer}
+.m-nav .burger span{width:22px;height:1.5px;background:var(--ink)}
+
+/* Hero */
+.m-hero{padding:32px 24px 44px}
+.m-hero .eyebrow{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-60);margin-bottom:20px}
+.m-hero .eyebrow::before{content:"— "}
+.m-hero h1{font-family:var(--serif);font-size:56px;line-height:.98;letter-spacing:-.02em;font-weight:400;margin-bottom:22px}
+.m-hero h1 em{color:var(--saffron-deep);font-style:italic}
+.m-hero p.sub{font-family:var(--serif);font-size:19px;line-height:1.4;color:var(--ink-70);margin-bottom:26px;font-style:italic}
+.m-hero .ctas{display:flex;flex-direction:column;gap:10px}
+.m-btn{display:inline-flex;align-items:center;justify-content:center;height:52px;padding:0 22px;font-size:12px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;text-decoration:none;border:1px solid var(--ink);color:var(--ink);background:transparent;gap:10px}
+.m-btn.primary{background:var(--plum);color:var(--paper);border-color:var(--plum)}
+.m-btn.primary .arrow{color:var(--saffron)}
+
+/* Hero image */
+.m-hero-img{margin:0 24px 44px;aspect-ratio:4/5;overflow:hidden;position:relative}
+.m-hero-img img{width:100%;height:100%;object-fit:cover;display:block}
+.m-hero-img .cap{position:absolute;bottom:14px;left:14px;right:14px;color:#fff;font-family:var(--serif);font-size:13px;font-style:italic;text-shadow:0 1px 6px rgba(0,0,0,.4)}
+
+/* Ticker */
+.m-ticker{border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:14px 0;overflow:hidden;white-space:nowrap;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-60);background:var(--paper-warm)}
+.m-ticker .track{display:inline-block;animation:slide 28s linear infinite;padding-left:100%}
+.m-ticker .track span{margin-right:28px}
+.m-ticker .track span::before{content:"◆ ";color:var(--saffron);margin-right:6px}
+@keyframes slide{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+
+/* Section head pattern */
+.m-section{padding:56px 24px}
+.m-section .eyebrow{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-60);margin-bottom:6px}
+.m-section .rule{width:28px;height:1.5px;background:var(--saffron);margin-bottom:14px}
+.m-section h2{font-family:var(--serif);font-size:34px;line-height:1.04;letter-spacing:-.01em;font-weight:400;margin-bottom:18px}
+.m-section h2 em{color:var(--saffron-deep);font-style:italic}
+.m-section p.lede{font-size:14px;line-height:1.55;color:var(--ink-70);margin-bottom:28px}
+
+/* Stats */
+.m-stats{padding:44px 24px;border-top:1px solid var(--hair);border-bottom:1px solid var(--hair)}
+.m-stats .grid{display:grid;grid-template-columns:1fr 1fr;gap:28px 16px}
+.m-stats .n{font-family:var(--serif);font-size:40px;font-weight:500;line-height:1;color:var(--plum);margin-bottom:4px;letter-spacing:-.02em}
+.m-stats .n em{color:var(--saffron-deep);font-style:italic}
+.m-stats .l{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-60);line-height:1.4}
+
+/* Verticals (tabs + card stack) */
+.m-verticals{background:var(--paper-warm);padding-bottom:56px}
+.m-tabs{display:flex;gap:0;padding:0 24px 20px;margin-top:20px;border-bottom:1px solid var(--hair)}
+.m-tabs button{flex:1;padding:14px 0;font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:500;background:transparent;border:none;color:var(--ink-60);cursor:pointer;position:relative;padding-bottom:10px}
+.m-tabs button.on{color:var(--ink)}
+.m-tabs button.on::after{content:"";position:absolute;bottom:-1px;left:0;right:0;height:2px;background:var(--plum)}
+.m-vcards{padding:28px 24px 0;display:flex;flex-direction:column;gap:14px}
+.m-vcard{background:#fff;border:1px solid var(--hair);padding:22px;display:flex;gap:16px;align-items:flex-start}
+.m-vcard .num{font-family:var(--serif);font-size:15px;font-style:italic;color:var(--saffron-deep);line-height:1;padding-top:4px;min-width:24px}
+.m-vcard h3{font-family:var(--serif);font-size:22px;line-height:1.15;margin-bottom:6px;font-weight:500}
+.m-vcard p{font-size:13px;line-height:1.5;color:var(--ink-70)}
+.m-vcard .arrow{color:var(--saffron-deep);font-size:20px;margin-left:auto;align-self:center}
+
+/* Philosophy (quote-ish section) */
+.m-philo{padding:72px 24px;position:relative}
+.m-philo .mark{font-family:var(--serif);font-size:90px;line-height:.7;color:var(--saffron);font-style:italic;margin-bottom:-10px}
+.m-philo blockquote{font-family:var(--serif);font-size:26px;line-height:1.25;letter-spacing:-.01em;font-weight:400}
+.m-philo blockquote em{color:var(--saffron-deep);font-style:italic}
+.m-philo cite{display:block;margin-top:22px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-60);font-style:normal}
+
+/* Featured departures (dark band) */
+.m-dark{background:var(--plum-deep);color:var(--paper);padding:56px 24px}
+.m-dark .eyebrow{color:rgba(246,241,231,.6)}
+.m-dark h2{color:var(--paper)}
+.m-dark p.lede{color:rgba(246,241,231,.7)}
+.m-dep-card{background:rgba(255,255,255,.04);border:1px solid rgba(246,241,231,.12);margin-top:16px;overflow:hidden}
+.m-dep-card .img{aspect-ratio:3/2;background:#222;overflow:hidden}
+.m-dep-card .img img{width:100%;height:100%;object-fit:cover;display:block}
+.m-dep-card .body{padding:22px}
+.m-dep-card .tag{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--saffron);margin-bottom:10px}
+.m-dep-card h3{font-family:var(--serif);font-size:22px;font-weight:500;margin-bottom:6px;line-height:1.15}
+.m-dep-card .meta{font-size:12px;color:rgba(246,241,231,.65);display:flex;gap:12px;margin-bottom:14px}
+.m-dep-card .meta span::before{content:"· ";margin-right:4px}
+.m-dep-card .meta span:first-child::before{content:""}
+.m-dep-card .price{font-family:var(--serif);font-size:18px;font-style:italic;color:var(--saffron)}
+.m-dep-card .go{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--paper);display:flex;justify-content:space-between;align-items:center;padding:14px 22px;border-top:1px solid rgba(246,241,231,.12)}
+
+/* Testimonials */
+.m-test{background:var(--paper-warm);padding:56px 24px}
+.m-test-card{background:#fff;border:1px solid var(--hair);padding:28px 24px;margin-bottom:14px}
+.m-test-card .quote{font-family:var(--serif);font-size:19px;line-height:1.4;font-style:italic;color:var(--ink);margin-bottom:20px}
+.m-test-card .who{display:flex;align-items:center;gap:12px}
+.m-test-card .avatar{width:42px;height:42px;border-radius:50%;background:var(--plum);color:var(--paper);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:17px}
+.m-test-card .who .name{font-size:13px;font-weight:500}
+.m-test-card .who .sub{font-size:11px;color:var(--ink-60);letter-spacing:.06em}
+
+/* Final CTA */
+.m-cta{padding:72px 24px;background:var(--plum);color:var(--paper);text-align:center;position:relative;overflow:hidden}
+.m-cta .leaf{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:240px;height:240px;background:var(--saffron);opacity:.08;border-radius:50%}
+.m-cta h2{font-family:var(--serif);font-size:40px;line-height:1;font-weight:400;letter-spacing:-.01em;color:var(--paper);margin-bottom:10px;position:relative}
+.m-cta h2 em{color:var(--saffron);font-style:italic}
+.m-cta p{font-size:14px;color:rgba(246,241,231,.75);margin-bottom:28px;position:relative}
+.m-cta .m-btn{position:relative;width:100%;background:var(--saffron);border-color:var(--saffron);color:var(--plum-deep)}
+
+/* Footer */
+.m-footer{background:var(--ink);color:var(--paper);padding:48px 24px 28px;font-size:13px}
+.m-footer .brand{font-family:var(--serif);font-size:22px;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+.m-footer .brand::before{content:"";width:20px;height:20px;background:var(--saffron);border-radius:999px 999px 999px 2px;transform:rotate(-12deg)}
+.m-footer p.desc{color:rgba(246,241,231,.65);line-height:1.55;margin-bottom:26px;max-width:28ch}
+.m-footer .col{margin-bottom:24px}
+.m-footer .col h4{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(246,241,231,.5);margin-bottom:12px}
+.m-footer .col a{display:block;color:var(--paper);opacity:.85;padding:6px 0;text-decoration:none;font-size:14px}
+.m-footer .fine{border-top:1px solid rgba(246,241,231,.12);padding-top:18px;color:rgba(246,241,231,.5);font-size:11px;display:flex;justify-content:space-between;letter-spacing:.04em}
+
+/* ===== Spec callouts beside the phone ===== */
+.specs{color:#F6F1E7;padding:8px 4px;max-width:520px}
+.specs .eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--saffron);margin-bottom:16px}
+.specs h3{font-family:var(--serif);font-size:26px;font-weight:500;margin-bottom:20px;letter-spacing:-.01em}
+.specs ul{list-style:none;display:flex;flex-direction:column;gap:18px;margin-bottom:32px}
+.specs li{display:grid;grid-template-columns:44px 1fr;gap:14px;padding-bottom:18px;border-bottom:1px solid rgba(246,241,231,.12)}
+.specs li:last-child{border-bottom:none}
+.specs .num{font-family:var(--serif);font-size:22px;color:var(--saffron);font-style:italic;line-height:1}
+.specs .t{font-size:14px;font-weight:500;margin-bottom:4px}
+.specs .d{font-size:13px;color:rgba(246,241,231,.65);line-height:1.5}
+.specs .handoff{background:rgba(232,169,59,.08);border:1px solid rgba(232,169,59,.25);padding:20px;font-size:13px;line-height:1.55;color:rgba(246,241,231,.85)}
+.specs .handoff strong{color:var(--saffron);display:block;margin-bottom:6px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:500}
+</style>
+</head>
+<body>
+
+<div class="page-head">
+  <div>
+    <div class="brand">Journey Weavers</div>
+  </div>
+  <div style="text-align:right">
+    <div class="meta" style="margin-bottom:6px">Mobile Sample · Option 01 · Editorial</div>
+    <h1>Homepage <em>— 402×874</em></h1>
+  </div>
+</div>
+
+<div class="stage">
+  <!-- Phone frame -->
+  <div class="phone">
+    <div class="island"></div>
+    <div class="statusbar">
+      <span>9:41</span>
+      <span class="right">
+        <!-- signal -->
+        <svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="7" width="3" height="5" rx=".6" fill="#1a1418"/><rect x="5" y="5" width="3" height="7" rx=".6" fill="#1a1418"/><rect x="10" y="2" width="3" height="10" rx=".6" fill="#1a1418"/><rect x="15" y="0" width="3" height="12" rx=".6" fill="#1a1418"/></svg>
+        <!-- wifi -->
+        <svg width="16" height="11" viewBox="0 0 16 11"><path d="M8 3c2.2 0 4.2.9 5.7 2.3l1-1C12.9 2.5 10.6 1.5 8 1.5S3.1 2.5 1.3 4.3l1 1C3.8 3.9 5.8 3 8 3z" fill="#1a1418"/><path d="M8 6.5c1.3 0 2.5.5 3.4 1.4l1-1C11.3 5.8 9.7 5 8 5s-3.3.8-4.4 1.9l1 1c.9-.9 2.1-1.4 3.4-1.4z" fill="#1a1418"/><circle cx="8" cy="9.8" r="1.3" fill="#1a1418"/></svg>
+        <!-- battery -->
+        <svg width="26" height="12" viewBox="0 0 26 12"><rect x=".5" y=".5" width="22" height="11" rx="3" stroke="#1a1418" stroke-opacity=".4" fill="none"/><rect x="2" y="2" width="19" height="8" rx="1.5" fill="#1a1418"/><rect x="24" y="4" width="1.5" height="4" rx=".5" fill="#1a1418" fill-opacity=".4"/></svg>
+      </span>
+    </div>
+    <div class="screen">
+      <!-- App content -->
+      <div class="m">
+
+        <!-- Nav -->
+        <header class="m-nav">
+          <div class="brand">Journey Weavers</div>
+          <div class="burger" aria-label="Menu"><span></span><span></span><span></span></div>
+        </header>
+
+        <!-- Hero -->
+        <section class="m-hero">
+          <div class="eyebrow">Est. 2019 · Mumbai &amp; Delhi</div>
+          <h1>We weave<br/>journeys,<br/><em>not itineraries.</em></h1>
+          <p class="sub">Boutique travel, designed around the people going — not a template.</p>
+          <div class="ctas">
+            <a href="#" class="m-btn primary">Plan my journey <span class="arrow">→</span></a>
+            <a href="#" class="m-btn">See fixed departures</a>
+          </div>
+        </section>
+
+        <!-- Hero image -->
+        <figure class="m-hero-img">
+          <img src="assets/stock/rajasthan1.jpg" alt=""/>
+          <figcaption class="cap">Sunrise over Jaisalmer, Thar Desert</figcaption>
+        </figure>
+
+        <!-- Ticker -->
+        <div class="m-ticker">
+          <div class="track">
+            <span>Corporate offsites</span><span>Boutique weddings</span><span>Silver anniversaries</span><span>#TravelWithin</span><span>Family journeys</span><span>Milestone trips</span><span>Fixed departures</span>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <section class="m-stats">
+          <div class="grid">
+            <div><div class="n">600<em>+</em></div><div class="l">Journeys<br/>woven</div></div>
+            <div><div class="n">38</div><div class="l">Countries<br/>traversed</div></div>
+            <div><div class="n">96<em>%</em></div><div class="l">Repeat &amp;<br/>referred</div></div>
+            <div><div class="n">6</div><div class="l">Years of<br/>quiet craft</div></div>
+          </div>
+        </section>
+
+        <!-- Verticals -->
+        <section class="m-verticals m-section" style="padding-bottom:0">
+          <div class="eyebrow">02 — What we do</div>
+          <div class="rule"></div>
+          <h2>Two hands,<br/><em>many threads.</em></h2>
+          <p class="lede">We weave for teams, and for the people you love.</p>
+
+          <div class="m-tabs" role="tablist">
+            <button class="on">Corporate</button>
+            <button>Personal</button>
+          </div>
+          <div class="m-vcards">
+            <a href="#" class="m-vcard"><div class="num">01</div><div><h3>Leadership offsites</h3><p>Himalayan retreats, Udaipur palaces, Alibaug villas.</p></div><div class="arrow">→</div></a>
+            <a href="#" class="m-vcard"><div class="num">02</div><div><h3>Team incentives</h3><p>Reward trips your people will keep talking about.</p></div><div class="arrow">→</div></a>
+            <a href="#" class="m-vcard"><div class="num">03</div><div><h3>Annual offsites</h3><p>Productive, playful, properly fed. 50–500 pax.</p></div><div class="arrow">→</div></a>
+            <a href="#" class="m-vcard"><div class="num">04</div><div><h3>Corporate gifting</h3><p>Not a hamper. A curated micro-journey.</p></div><div class="arrow">→</div></a>
+          </div>
+        </section>
+
+        <!-- Philosophy / pull quote -->
+        <section class="m-philo">
+          <div class="mark">"</div>
+          <blockquote>The opposite of a checklist. We design for the <em>quiet hours</em> between the photos — the bits you'll actually remember.</blockquote>
+          <cite>— Our philosophy, No. 03</cite>
+        </section>
+
+        <!-- Featured departures -->
+        <section class="m-dark">
+          <div class="eyebrow" style="margin-bottom:6px">04 — Fixed departures</div>
+          <div class="rule" style="background:var(--saffron);width:28px;height:1.5px;margin-bottom:14px"></div>
+          <h2>Trips already<br/><em>in motion.</em></h2>
+          <p class="lede">Join a small group. Book a seat. Wander intentionally.</p>
+
+          <article class="m-dep-card">
+            <div class="img"><img src="assets/stock/kerala1.jpg" alt=""/></div>
+            <div class="body">
+              <div class="tag">Monsoon · Kerala</div>
+              <h3>Slow Backwaters &amp; Spice Trails</h3>
+              <div class="meta"><span>7 nights</span><span>Oct 12</span><span>8 guests</span></div>
+              <div class="price">From ₹ 1,68,000 <span style="color:rgba(246,241,231,.6);font-size:12px;font-style:normal;letter-spacing:.06em;margin-left:4px">/ person</span></div>
+            </div>
+            <div class="go">View itinerary <span>→</span></div>
+          </article>
+
+          <article class="m-dep-card">
+            <div class="img"><img src="assets/stock/ladakh.jpg" alt=""/></div>
+            <div class="body">
+              <div class="tag">High Himalaya · Ladakh</div>
+              <h3>Monasteries Above the Clouds</h3>
+              <div class="meta"><span>9 nights</span><span>Sep 04</span><span>10 guests</span></div>
+              <div class="price">From ₹ 2,24,000 <span style="color:rgba(246,241,231,.6);font-size:12px;font-style:normal;letter-spacing:.06em;margin-left:4px">/ person</span></div>
+            </div>
+            <div class="go">View itinerary <span>→</span></div>
+          </article>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="m-test">
+          <div class="eyebrow" style="font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-60);margin-bottom:6px">06 — Client love</div>
+          <div class="rule" style="width:28px;height:1.5px;background:var(--saffron);margin-bottom:14px"></div>
+          <h2 style="font-family:var(--serif);font-size:34px;line-height:1.04;font-weight:400;margin-bottom:26px">The nicest<br/><em style="color:var(--saffron-deep);font-style:italic">kind of noise.</em></h2>
+
+          <div class="m-test-card">
+            <div class="quote">"They planned our anniversary trip the way a good friend would — not a travel agent. Every little thing felt considered."</div>
+            <div class="who"><div class="avatar">R</div><div><div class="name">Radhika &amp; Arjun M.</div><div class="sub">Silver anniversary · Sri Lanka</div></div></div>
+          </div>
+
+          <div class="m-test-card">
+            <div class="quote">"Our team is still quoting that offsite, three months later. The restraint — not over-scheduling us — was the magic."</div>
+            <div class="who"><div class="avatar">P</div><div><div class="name">Priya Shah</div><div class="sub">People Lead, fintech · Coorg offsite</div></div></div>
+          </div>
+        </section>
+
+        <!-- Final CTA -->
+        <section class="m-cta">
+          <div class="leaf"></div>
+          <h2>Shall we <em>weave</em><br/>yours?</h2>
+          <p>A 20-minute call. No pitch, just listening.</p>
+          <a href="#" class="m-btn primary">Begin your journey →</a>
+        </section>
+
+        <!-- Footer -->
+        <footer class="m-footer">
+          <div class="brand">Journey Weavers</div>
+          <p class="desc">Boutique travel house for considered journeys. Mumbai · Delhi.</p>
+          <div class="col">
+            <h4>Explore</h4>
+            <a href="#">Corporate</a>
+            <a href="#">Personal</a>
+            <a href="#">Fixed departures</a>
+            <a href="#">#TravelWithin</a>
+          </div>
+          <div class="col">
+            <h4>Contact</h4>
+            <a href="mailto:hello@journeyweavers.in">hello@journeyweavers.in</a>
+            <a href="tel:+919999999999">+91 99999 99999</a>
+          </div>
+          <div class="fine"><span>© 2025 Journey Weavers</span><span>IATA · ASTA</span></div>
+        </footer>
+
+      </div>
+    </div>
+    <div class="home-indicator"></div>
+  </div>
+
+  <!-- Spec callouts -->
+  <aside class="specs">
+    <div class="eyebrow">Mobile adaptation · Option 01</div>
+    <h3>What changes on a phone.</h3>
+
+    <ul>
+      <li>
+        <div class="num">01</div>
+        <div>
+          <div class="t">Display type stays, scale drops</div>
+          <div class="d">Cormorant Garamond holds; the 128px hero becomes 56px. Same italic cadence, same <em>em</em> accents.</div>
+        </div>
+      </li>
+      <li>
+        <div class="num">02</div>
+        <div>
+          <div class="t">Grids collapse to stacks</div>
+          <div class="d">Two-column verticals &amp; four-up stats become tabs + card stacks. Section rhythm is preserved, not flattened.</div>
+        </div>
+      </li>
+      <li>
+        <div class="num">03</div>
+        <div>
+          <div class="t">Single CTA per fold</div>
+          <div class="d">Primary action always within thumb reach. Full-width buttons, 52px hit area, 20-24px side padding.</div>
+        </div>
+      </li>
+      <li>
+        <div class="num">04</div>
+        <div>
+          <div class="t">Hero imagery below the fold</div>
+          <div class="d">Type-first. Image appears as a 4:5 portrait beneath the first CTA so the text is never fighting a photo.</div>
+        </div>
+      </li>
+      <li>
+        <div class="num">05</div>
+        <div>
+          <div class="t">Sticky, quiet nav</div>
+          <div class="d">Translucent paper background with blur. Logo + burger only — the whole menu lives behind the burger.</div>
+        </div>
+      </li>
+    </ul>
+
+    <div class="handoff">
+      <strong>For the Figma handoff</strong>
+      When we lock the direction, every page gets <em style="color:var(--saffron);font-style:italic">two artboards</em> — Desktop (1440) and Mobile (375). Breakpoint rules, spacing tokens, and component states are documented alongside each frame so your developers can build without guesswork.
+    </div>
+  </aside>
+</div>
+
+</body>
+</html>
