@@ -33,8 +33,9 @@
   .grid{display:grid;grid-template-columns:1fr 1fr;gap:36px}
   .card{background:#fff;border:1px solid var(--hair);overflow:hidden;transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s;text-decoration:none;color:inherit;display:flex;flex-direction:column}
   .card:hover{transform:translateY(-6px);box-shadow:0 30px 60px -30px rgba(42,20,54,.35)}
-  .card .preview{aspect-ratio:16/10;background:center/cover no-repeat;position:relative;overflow:hidden}
-  .card .preview::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(26,20,24,.55))}
+  .card .preview{aspect-ratio:16/10;position:relative;overflow:hidden;background:#2A1436}
+  .card .preview img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .card .preview::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(26,20,24,.55));z-index:1}
   .card .tag{position:absolute;top:20px;left:20px;background:rgba(246,241,231,.95);padding:8px 14px;font-size:10px;letter-spacing:.22em;text-transform:uppercase;z-index:2}
   .card .label{position:absolute;bottom:20px;left:20px;color:#fff;font-family:var(--serif);font-size:18px;font-style:italic;z-index:2}
   .card .body{padding:32px 32px 36px}
@@ -48,10 +49,6 @@
   .note h3{font-family:var(--serif);font-size:26px;font-weight:500}
   .note p{font-size:14px;opacity:.8;max-width:520px;margin-top:6px}
   @media (max-width:860px){.grid{grid-template-columns:1fr}.wrap{padding:32px 20px 60px}}
-
-  /* preview bg images use CSS for offline reliability */
-  .card .p-v1{background-image:url('assets/stock/rajasthan1.jpg')}
-  .card .p-v2{background-image:url('assets/stock/hero3.jpg')}
 </style>
 </head>
 <body>
@@ -65,8 +62,9 @@
   <p class="lede">Both options use the Journey Weavers DNA — plum, saffron, the footprint mark, and the same considered voice. Where they differ is in rhythm, density, and emotional register. Click either to explore.</p>
 
   <div class="grid">
-    <div class="card" role="link" tabindex="0" onclick="location.href='journey-weavers.html'" onkeydown="if(event.key==='Enter')location.href='journey-weavers.html'" style="cursor:pointer">
-      <div class="preview p-v1">
+    <div class="card" role="link" tabindex="0" onclick="if(event.target.closest('a'))return;location.href='journey-weavers.html'" onkeydown="if(event.key==='Enter')location.href='journey-weavers.html'" style="cursor:pointer">
+      <div class="preview">
+        <img src="assets/stock/rajasthan1.jpg" alt="Editorial design preview" loading="lazy"/>
         <span class="tag">Option 01</span>
         <span class="label">"The Editorial"</span>
       </div>
@@ -79,13 +77,14 @@
           <li>Emphasis on clarity and trust</li>
           <li>Feels: Condé Nast Traveller, &Beyond</li>
         </ul>
-        <span class="go">Explore Option 01 →</span>
-        <a href="journey-weavers-mobile.html" style="display:block;margin-top:14px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--saffron);font-weight:500" onclick="event.stopPropagation()">See mobile sample →</a>
+        <a href="journey-weavers.html" class="go">Explore Option 01 →</a>
+        <a href="journey-weavers-mobile.html" style="display:block;margin-top:14px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--saffron);font-weight:500">See mobile sample →</a>
       </div>
     </div>
 
     <a class="card" href="journey-weavers-cinematic.html">
-      <div class="preview p-v2">
+      <div class="preview">
+        <img src="assets/stock/hero3.jpg" alt="Cinematic design preview" loading="lazy"/>
         <span class="tag">Option 02</span>
         <span class="label">"The Cinematic"</span>
       </div>
